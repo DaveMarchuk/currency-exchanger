@@ -26,7 +26,6 @@ function printElements(response, selectCurrency, usdAmount)  {
 }
 
 function printError(error, selectCurrency)  {
-  console.log(error);
   document.querySelector('#showResponse').innerText = `There was an error accessing the data for ${selectCurrency}   ${error}`;
 }
 
