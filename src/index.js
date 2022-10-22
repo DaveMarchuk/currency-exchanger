@@ -8,7 +8,6 @@ import CurrencyService from './services/currency-service';
 function getCurrency(selectCurrency, usdAmount)  {
   CurrencyService.getCurrency(selectCurrency, usdAmount)
     .then(function(response)  {
-      console.log(response);
       if (response.result == 'success')  {
         printElements(response, selectCurrency, usdAmount);
       } else {
@@ -21,7 +20,6 @@ function getCurrency(selectCurrency, usdAmount)  {
 
 function printElements(response, selectCurrency, usdAmount)  {
   let convertRate = usdAmount * response.conversion_rate;
-  console.log(convertRate);
   document.querySelector('#showResponse').innerText = `The USD equivalent of ${selectCurrency} is ${convertRate}`;
 }
 
