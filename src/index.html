@@ -3,42 +3,42 @@
     <title>Currency Exchanger</title>
   </head>
   <body>
-    <div class="bucket">
+    <div class="container p-3 mb-2 bg-gradient-warning text-dark">
       <h1>Currency exchange for USD</h1>
       <p>To get the currency of your choice converted from USD, enter in the amount and then select the currency you would like to convert to.</p>
-      <form id="currency-radio">
+      <form id="currency-radio" class="form-check">
         <label for="currency">How many US Dollars?:</label>
-        <input id="currency" type="text" name="currency">
+        <input id="currency" classtype="text" name="currency">
         <br>
         <h2>Select the currency to convert to</h2>
         <label>
           <input type="radio" name="currency-type" value="BYN">
-          <em>Belarusian Ruble</em>
+          <strong>Belarusian Ruble</strong>
         </label>
         <label>
           <input type="radio" name="currency-type" value="CHF">
-          <em>Swiss Franc</em>
+          <strong>Swiss Franc</strong>
         </label>
         <label>
           <input type="radio" name="currency-type" value="CLP">
-          <em>Chilean Peso</em>
+          <strong>Chilean Peso</strong>
         </label>
         <label>
           <input type="radio" name="currency-type" value="ETB">
-          <em>Ethiopian Birr</em>
+          <strong>Ethiopian Birr</strong>
         </label>
         <label>
           <input type="radio" name="currency-type" value="RUB">
-          <em>Russian Ruble</em>
+          <strong>Russian Ruble</strong>
         </label>
         <label>
           <input type="radio" name="currency-type" value="UAH">
-          <em>Ukrainian Hryvnia</em>
+          <strong>Ukrainian Hryvnia</strong>
         </label>
         <br><br>
-        <button type="submit" class="btn" id="currencyExchange">Exchange Currency!</button>
+        <button type="submit" class="btn btn-success" id="currencyExchange">Exchange Currency!</button>
       </form>
-      <p id="showResponse"></p>
+      <h3 id="showResponse" class="text-center text-uppercase d-block p-2 text-white"></h3>
     </div>
   </body>
 </html>
