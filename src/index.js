@@ -9,7 +9,7 @@ function getCurrency(selectCurrency, usdAmount)  {
   CurrencyService.getCurrency(selectCurrency, usdAmount)
     .then(function(response)  {
       console.log(response);
-      if (response)  {
+      if (response.result == 'success')  {
         printElements(response, selectCurrency, usdAmount);
       } else {
         printError(response, selectCurrency);
@@ -27,7 +27,7 @@ function printElements(response, selectCurrency, usdAmount)  {
 
 function printError(error, selectCurrency)  {
   console.log(error);
-  document.querySelector('#showResponse').innerText = `There was an error accessing the data for ${selectCurrency}: ${error}`;
+  document.querySelector('#showResponse').innerText = `There was an error accessing the data for ${selectCurrency}   ${error}`;
 }
 
 function handleFormSubmission(event)  {

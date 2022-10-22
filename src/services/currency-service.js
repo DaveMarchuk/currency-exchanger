@@ -3,8 +3,8 @@ export default class CurrencyService  {
     return  fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${selectCurrency}`)
     .then(function(response) {
       if  (!response.ok)  {
-        console.log(response.result);
-        const errorMessage = `${response.result} ${response.error_type}`;
+        console.log(response);
+        const errorMessage = `${response.status} ${response.statusText}`;
         throw new Error(errorMessage);
       } else  {
         return response.json();
