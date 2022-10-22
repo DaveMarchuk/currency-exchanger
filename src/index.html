@@ -3,6 +3,42 @@
     <title>Currency Exchanger</title>
   </head>
   <body>
-    
+    <div class="bucket">
+      <h1>Currency exchange for USD</h1>
+      <p>To get the currency of your choice converted from USD, enter in the amount and then select the currency you would like to convert to.</p>
+      <form id="currency-radio">
+        <label for="currency">How many US Dollars?:</label>
+        <input id="currency" type="text" name="currency">
+        <br>
+        <h2>Select the currency to convert to</h2>
+        <label>
+          <input type="radio" name="currency-type" value="BYN">
+          <em>Belarusian Ruble</em>
+        </label>
+        <label>
+          <input type="radio" name="currency-type" value="CHF">
+          <em>Swiss Franc</em>
+        </label>
+        <label>
+          <input type="radio" name="currency-type" value="CLP">
+          <em>Chilean Peso</em>
+        </label>
+        <label>
+          <input type="radio" name="currency-type" value="ETB">
+          <em>Ethiopian Birr</em>
+        </label>
+        <label>
+          <input type="radio" name="currency-type" value="RUB">
+          <em>Russian Ruble</em>
+        </label>
+        <label>
+          <input type="radio" name="currency-type" value="UAH">
+          <em>Ukrainian Hryvnia</em>
+        </label>
+        <br><br>
+        <button type="submit" class="btn" id="currencyExchange">Exchange Currency!</button>
+      </form>
+      <p id="showResponse"></p>
+    </div>
   </body>
 </html>
