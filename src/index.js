@@ -5,11 +5,12 @@ import CurrencyService from './services/currency-service';
 
 // Business Logic
 
-function getCurrency(selectCurrency)  {
-  CurrencyService.getCurrency(selectCurrency)
+function getCurrency(selectCurrency, usdAmount)  {
+  CurrencyService.getCurrency(selectCurrency, usdAmount)
     .then(function(response)  {
-      if (response.data)  {
-        printElements(response, selectCurrency);
+      console.log(response);
+      if (response)  {
+        printElements(response, selectCurrency, usdAmount);
       } else {
         printError(response, selectCurrency);
       }
@@ -18,18 +19,22 @@ function getCurrency(selectCurrency)  {
 
 // UI Logic
 
-function printElements(response, selectCurrency)  {
-  
+function printElements(response, selectCurrency, usdAmount)  {
+  let convertRate = usdAmount * response.conversion_rate;
+  console.log(convertRate);
+  document.querySelector('#showResponse').innerText = `The USD equivalent of ${selectCurrency} is ${convertRate}`;
 }
 
 function printError(error, selectCurrency)  {
-
+  console.log(error);
+  document.querySelector('#showResponse').innerText = `There was an error accessing the data for ${selectCurrency}: ${error}`;
 }
 
 function handleFormSubmission(event)  {
   event.preventDefault();
+  const usdAmount = document.getElementById("currency").value;
   const currency = document.querySelector("input[type=radio]:checked").value;
-  getCurrency(currency);
+  getCurrency(currency, usdAmount);
 }
 
 window.addEventListener("load", function()  {
